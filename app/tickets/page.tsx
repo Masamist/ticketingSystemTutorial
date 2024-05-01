@@ -1,5 +1,6 @@
-import React from 'react'
 import prisma from '@/prisma/db'
+import DataTable from './DataTable'
+
 const Tickets = async() => {
 
   const tickets = await prisma.ticket.findMany()
@@ -7,7 +8,7 @@ const Tickets = async() => {
   console.log(tickets)
 
   return (
-    <div>Tickets</div>
+    <div><DataTable tickets={tickets} /></div>
   )
 }
 

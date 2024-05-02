@@ -30,7 +30,7 @@ export async function PATCH(request: NextRequest, { params }: Props){
   return NextResponse.json(updateTicket)
 }
 
-export async function Delete(request: NextRequest, { params }: Props){
+export async function DELETE(request: NextRequest, { params }: Props){
 
   const ticket = await prisma.ticket.findUnique({
     where: {id: parseInt(params.id)}
@@ -44,3 +44,4 @@ export async function Delete(request: NextRequest, { params }: Props){
   })
   return NextResponse.json({message: "Ticket Deleted"})
 }
+

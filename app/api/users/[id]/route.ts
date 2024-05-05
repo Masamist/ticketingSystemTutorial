@@ -29,8 +29,6 @@ export async function PATCH(request: NextRequest, {params}: Props){
     delete body.password
   }
 
-  console.log(body)
-
   if(user.username !== body.username){
     const duplicateUsername = await prisma.user.findUnique({
       where: {username: body.username},
